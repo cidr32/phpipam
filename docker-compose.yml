@@ -13,7 +13,6 @@ services:
     restart: always
     depends_on:
       - mysql
-    image: pierrecdn/phpipam
     environment:
       - MYSQL_ENV_MYSQL_HOST=${MYSQL_ENV_MYSQL_HOST}
       - MYSQL_ENV_MYSQL_USER=${MYSQL_ENV_MYSQL_USER}
