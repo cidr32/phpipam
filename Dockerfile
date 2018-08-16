@@ -1,5 +1,7 @@
+# Forked from pierrecdn/phpipam (https://github.com/pierrecdn/phpipam)
+
 FROM php:5.6-apache
-MAINTAINER Pierre Cheynier <pierre.cheynier@gmail.com>
+MAINTAINER cidr32
 
 ENV PHPIPAM_SOURCE https://github.com/phpipam/phpipam/
 ENV PHPIPAM_VERSION 1.3.2

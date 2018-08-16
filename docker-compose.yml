@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:5.6
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./root/db_data:/var/lib/mysql
+  ipam:
+    image: pierrecdn/phpipam
+    restart: always
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_ENV_MYSQL_HOST=${MYSQL_ENV_MYSQL_HOST}
+      - MYSQL_ENV_MYSQL_USER=${MYSQL_ENV_MYSQL_USER}
+      - MYSQL_ENV_MYSQL_PASSWORD=${MYSQL_ENV_MYSQL_PASSWORD}
+    ports:
+      - "8081:80"
